@@ -11,7 +11,7 @@ dotenv.config();
 
 const app = express();
 
-const PORT=process.env.PORT
+const PORT=import.meta.env.VITE_PORT
 app.use(cors());
 app.use(helmet());
 app.use(morgan('dev'));

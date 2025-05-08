@@ -63,7 +63,7 @@ export const createProperty=async (req,res)=>{
         }
 }
 
-export const updatePropert = async (req, res) => {
+export const updateProperty = async (req, res) => {
         const { id } = req.params;
         const {title,description,location,price,image}=req.body;
         try {

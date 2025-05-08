@@ -17,32 +17,33 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
 
-app.get(async (req, res,next) => {
+app.use(async (req, res, next) => {
     try {
         const decision = await aj.protect(req, { requested: 5 });
         if (decision.isDenied()) {
             if (decision.reason.isRateLimit()) {
-                res.status(429).json({ error: "Too Many Requests" });
-              }else if (decision.reason.isBot()) {
-                res.status(403).json({ error: "Bot Access denied" });
-              }else {
-                res.status(403).json({ error: "Forbidden" });
-              }
-              return
+                return res.status(429).json({ error: "Too Many Requests" });
+            } else if (decision.reason.isBot()) {
+                return res.status(403).json({ error: "Bot Access denied" });
+            } else {
+                return res.status(403).json({ error: "Forbidden" });
+            }
         }
-        next()
-
+        next();
     } catch (error) {
-        console.log("Arcjet Error")
-        next()
+        console.log("Arcjet Error", error);
+        next(); // Continue even if Arcjet fails
     }
-})
+});
+
+
+
 app.get('/', (req, res) => {
     res.send('Welcome to Xcelsz Offer API');
   });
 
 
-app.use("/api",PropertyRouter)
+app.use("/api/properties",PropertyRouter)
 
 async function initializeDB() {
         try {

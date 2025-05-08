@@ -1,7 +1,8 @@
 import NavBar from "./components/NavBar"
 import {Routes,Route} from "react-router-dom"
 import HomePage from "./pages/HomePage"
-import ProductPage from "./pages/ProductPage"
+import EditPropertyPage from "./pages/EditPropertyPage"
+import  PropertyDetailPage from "./pages/PropertyDetailPage"
 import SnapShootImages from "./components/SnapShootImages"
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/product/:id" element={<ProductPage />}/>
+        <Route path="/editproperty/:id" element={<EditPropertyPage />}/>
+        <Route path="/propertydetails/:id" element={<PropertyDetailPage />}/>
         <Route path="/snapshoots" element={<SnapShootImages />}/>
       </Routes>
     </main>

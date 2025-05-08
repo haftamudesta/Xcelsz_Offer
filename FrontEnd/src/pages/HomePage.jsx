@@ -9,6 +9,9 @@ const HomePage = () => {
                 fetchProperties()
         },[fetchProperties])
         console.log(properties)
+        if(error){
+          return <h1>error fetching data...</h1>
+        }
   return (
     <div>
       {

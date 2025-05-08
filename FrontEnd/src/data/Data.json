@@ -1,0 +1,29 @@
+{
+        "postmanSnapshoots": [
+          {
+            "id": "1",
+            "src": "images/createProperty.PNG",
+            "title": "Create Property"
+          },
+          {
+                "id": "2",
+                "src": "images/getAllProperties.PNG",
+                "title": "Get All Properties"
+              },
+              {
+                "id": "3",
+                "src": "images/getSingleProperty.PNG",
+                "title": "Get Single Property"
+              },
+              {
+                "id": "4",
+                "src": "images/updateProperty.PNG",
+                "title": "Update Property"
+              },
+              {
+                "id": "5",
+                "src": "images/deleteProperty.PNG",
+                "title": "Delete Property"
+              }
+        ]
+}

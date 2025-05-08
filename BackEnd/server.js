@@ -37,6 +37,9 @@ app.get(async (req, res,next) => {
         next()
     }
 })
+app.get('/', (req, res) => {
+    res.send('Welcome to Xcelsz Offer API');
+  });
 
 app.use("/api",PropertyRouter)
 
